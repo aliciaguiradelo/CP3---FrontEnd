@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function enviar() {
+            let nome = document.getElementById('idNome');
+            let sobrenome = document.getElementById('idSobrenome');
+            let idade = document.getElementById('idIdade');
+            let envio = false;
+            if (nome.value == "") {
+                alert("O preenchimento do NOME é obrigatório!") ;
+                nome.focus();
+            } else if (sobrenome.value == "") {
+                alert("O preenchimento do SOBRENOME é obrigatório!");
+                sobrenome.focus();
+            } else if (idade.value == "") {
+                alert("O preenchimento da IDADE é obrigatório!");
+                idade.focus();
+            } else if (idade.value<=0 || idade.value>=150) {
+                alert("A idade deve ser maior que 0 e menor que 150!");
+                idade.focus();
+            } else {
+                envio=true;
+            }
+
+            return envio;
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <header>
+            <section id="meioheader" class="main">
+                <div id="logo"><span>ALÍCIA</span>96960</div>
+                <nav>
+                    <a href="index.html" class="selectedMenu">HOME</a> 
+                    <a href="pagina1.html" >Página 1</a> 
+                    <a href="contato.html">Contato</a> 
+                </nav>
+            </section>    
+        </header>
+        <main class="main" id="principal">
+            <section id="banner">
+                <img alt="banner" src="img/banner2.png" />
+                <small>Vestibulum est torquent neque ut proin a porttitor vestibulum tellus non a dui scelerisque ornare.</small>
+            </section>
+            <section id="highlight">
+                <h2>CheckPoint3</h2>
+            </section>
+            <form method="post" onsubmit="return enviar();">
+                <label for="idNome">Nome:</label>
+                <input type="text" id="idNome" name="idNome" ><br><br>
+                <label for="idSobrenome">Sobrenome:</label>
+                <input type="text" id="idSobrenome" name="idSobrenome"><br><br>
+                <label for="idIdade">Idade</label>
+                <input type="text" id="idIdade" name="idIdade" required placeholder="Digite uma idade entre 0 e 150!"><br><br>
+                <button id="btnEnviar" type="submit">Enviar</button> 
+            </form>
+        </main>
+        <footer>
+            <small>&copy; 2022 ALÍCIA GUIRADELO</small>
+        </footer>
+    </div>
+</body>
+</html>
